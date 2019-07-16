@@ -25,6 +25,7 @@ function getTourProps(props: Object): Object {
     'spotlightPadding',
     'styles',
     'tooltipComponent',
+    'onClickSpotlight',
   ];
 
   return Object.keys(props)

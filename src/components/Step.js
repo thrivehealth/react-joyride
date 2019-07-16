@@ -53,6 +53,7 @@ export default class JoyrideStep extends React.Component {
       isFixed: PropTypes.bool,
       locale: PropTypes.object,
       offset: PropTypes.number.isRequired,
+      onClickSpotlight: PropTypes.func,
       placement: PropTypes.oneOf([
         'top',
         'top-start',

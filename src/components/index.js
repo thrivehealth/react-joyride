@@ -45,6 +45,7 @@ class Joyride extends React.Component {
     getHelpers: PropTypes.func,
     hideBackButton: PropTypes.bool,
     locale: PropTypes.object,
+    onClickSpotlight: PropTypes.func,
     run: PropTypes.bool,
     scrollOffset: PropTypes.number,
     scrollToFirstStep: PropTypes.bool,

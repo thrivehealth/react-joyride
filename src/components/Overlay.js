@@ -32,6 +32,7 @@ export default class JoyrideOverlay extends React.Component {
     disableScrollParentFix: PropTypes.bool.isRequired,
     lifecycle: PropTypes.string.isRequired,
     onClickOverlay: PropTypes.func.isRequired,
+    onClickSpotlight: PropTypes.func,
     placement: PropTypes.string.isRequired,
     spotlightClicks: PropTypes.bool.isRequired,
     spotlightPadding: PropTypes.number,
@@ -183,7 +184,14 @@ export default class JoyrideOverlay extends React.Component {
 
   render() {
     const { mouseOverSpotlight, showSpotlight } = this.state;
-    const { disableOverlay, lifecycle, onClickOverlay, placement, styles } = this.props;
+    const {
+      disableOverlay,
+      lifecycle,
+      onClickOverlay,
+      onClickSpotlight,
+      placement,
+      styles,
+    } = this.props;
 
     if (disableOverlay || lifecycle !== LIFECYCLE.TOOLTIP) {
       return null;
@@ -204,7 +212,7 @@ export default class JoyrideOverlay extends React.Component {
     };
 
     let spotlight = placement !== 'center' && showSpotlight && (
-      <Spotlight styles={this.spotlightStyles} />
+      <Spotlight onClickSpotlight={onClickSpotlight} styles={this.spotlightStyles} />
     );
 
     // Hack for Safari bug with mix-blend-mode with z-index
