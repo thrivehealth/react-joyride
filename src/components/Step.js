@@ -220,9 +220,10 @@ export default class JoyrideStep extends React.Component {
     update({ lifecycle: LIFECYCLE.TOOLTIP });
   };
 
-  handleClickOverlay = () => {
+  handleClickOverlay = event => {
     const { helpers, step } = this.props;
 
+    event.nativeEvent.stopImmediatePropagation();
     if (!step.disableOverlayClose) {
       helpers.close();
     }
