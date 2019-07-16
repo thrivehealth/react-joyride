@@ -268,7 +268,11 @@ export default class JoyrideStep extends React.Component {
     }
 
     return (
-      <div key={`JoyrideStep-${index}`} className="react-joyride__step">
+      <div
+        key={`JoyrideStep-${index}`}
+        className="react-joyride__step"
+        onClick={e => e.nativeEvent && e.nativeEvent.stopImmediatePropagation()}
+      >
         <Portal id="react-joyride-portal">
           <Overlay
             {...step}
